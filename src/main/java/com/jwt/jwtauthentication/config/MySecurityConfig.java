@@ -45,6 +45,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().authenticationEntryPoint(entryPoint);
 
+        //this will trigger before any request to validate token
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
